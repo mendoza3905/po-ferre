@@ -1,0 +1,54 @@
+/* Soporte para Muescas (Notch / Dynamic Island) y Gestos del Teléfono */
+:root {
+    --sat: env(safe-area-inset-top, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+}
+
+body {
+    padding-top: var(--sat);
+    padding-bottom: var(--sab);
+    padding-left: var(--sal);
+    padding-right: var(--sar);
+    touch-action: manipulation;
+}
+
+/* Menú Lateral Deslizable (Drawer) */
+.drawer-open {
+    transform: translateX(0) !important;
+}
+
+/* Indicador de Vista Activa */
+.nav-btn.active {
+    background-color: #059669 !important;
+    color: #ffffff !important;
+}
+
+/* Scrollbar suave e invisible en móviles */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+/* Optimización para dispositivos móviles */
+html, body {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Evitar zoom automático en iPhone/Android al enfocar inputs */
+input, select, button {
+    font-size: 14px !important;
+}
+
+/* Scroll suave para listas táctiles */
+.overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+}
